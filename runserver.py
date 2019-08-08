@@ -1,5 +1,7 @@
 from flask import Flask
 import os
+import ldap
+import ldap.modlist as modlist
 app = Flask(__name__)
 
 @app.route("/")

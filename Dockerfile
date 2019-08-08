@@ -1,13 +1,13 @@
-FROM python:2.7.15-alpine3.8
+FROM python:3.7-alpine3.8
 
 COPY sshd_config /etc/ssh/
 
 RUN apk --update add g++ \
     libffi-dev \
-    openssl-dev \
     openssh \
     openrc \
     bash \
+    build-base openldap-dev python3-dev \
     && echo "root:Docker!" | chpasswd \
     && echo "cd /home" >> /etc/bash.bashrc 
 
